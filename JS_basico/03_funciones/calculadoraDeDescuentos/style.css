@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(236, 231, 221);
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#result{
+    font-size: 1.5rem;
+    color: rgb(45, 13, 85);
+}
+
+h1{
+    color: rgb(45, 13, 85);
+    text-decoration: double underline rgb(45, 13, 85);
+}
