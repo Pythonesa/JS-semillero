@@ -58,8 +58,28 @@ const kaly = {
     nombre: "Kaly",
     tipo: "Perro",
     edad: 3,
-    ladrar: function () {
+    ladrar: function () { //enlace implícito
         console.log("Guau! Guau!");
+        console.log(`${this.nombre} está ladrando y tiene ${this.edad} años.`);
     },
 };
 kaly.ladrar();
+
+const pepe = {
+    nombre: "Pepe",
+    edad: 30
+}
+
+function saludar() {
+    console.log(`${this.nombre} está saludando!`);
+}
+
+//enlace explícito
+saludar.call(pepe);
+saludar.call(kaly);
+
+function saludarConAmigo(nombreAmigo) {
+    console.log(`Hola, soy ${this.nombre} y mi mejor amigo es ${nombreAmigo}!`);
+}
+
+saludarConAmigo.call(kaly, "Pepe"); //pasamos primero el contexto y luego los parámetros
