@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopción de animales</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="mainWithLocalStorage.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1><span class="material-symbols-outlined">pets</span> Adopción de animales <span class="material-symbols-outlined">pets</span></h1>
+    <form id="newAnimal" onsubmit="newAnimal(event)">
+        <div>
+            <label for="name">Nombre:</label>
+            <input id="name" type="text" placeholder="Nombre del animal" required>
+        </div>
+        <div>
+            <label for="age">Edad:</label>
+            <input id="age" type="number" placeholder="Edad del animal" required>
+        </div>
+        <div>
+            <label for="sex">Sexo:</label>
+            <select id="sex">
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+            </select>
+        </div>
+        <div>
+            <label for="species">Especie:</label>
+            <input id="species" type="text" placeholder="Especie del animal" required>
+        </div>
+        <div>
+            <label for="isAdopted">¿Esta adoptado?</label>
+            <select id="isAdopted">
+                <option value="false">No</option>
+                <option value="true">Si</option>
+            </select>
+        </div>
+        <button id="btnNewAnimal" type="submit">Añadir animal</button>
+    </form>
+    <div id="animals"></div>
+</body>
+</html>
