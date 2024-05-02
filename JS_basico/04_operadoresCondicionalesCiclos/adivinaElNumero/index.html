@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adivina el número</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <!-- Tailwind CDN: No se debe usar en producción -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script type="module" src="./main.mjs"></script>
+    </head>
+    <body class="bg-slate-200 flex flex-col font-mono">
+        <header>
+            <h1 class="text-center text-3xl text-blue-600 font-bold mt-4 [text-shadow:1px_1px_1px_#000]">Adivina el número</h1>
+            <p class="text-center text-2xl text-blue-600 m-2">Intente adivinar el número entre 0 y 100</p>
+        </header>
+        <main class="flex flex-col justify-center items-center text-center self-center mt-2 w-5/6 text-blue-800">
+            <section id="startGame">
+                <button id="startButton" class="bg-blue-500 hover:bg-blue-700 text-blue-100 font-bold px-4 py-1 rounded self-center">Jugar</button>
+            </section>
+            <form onsubmit="return false" id="guessNumber" class="flex flex-col gap-2" style="display: none;">
+                <div>
+                    <label for="guess">Ingresa tu número:</label>
+                    <input id="guess" type="number" min="0" max="100" value="50" required>
+                </div>
+                <div>
+                    <button id="guessButton" class="bg-blue-500 hover:bg-blue-700 text-blue-100 font-bold px-4 py-1 rounded self-center">Adivinar</button>
+                    <button onclick={window.location.reload()} id="resetButton" class="bg-blue-500 hover:bg-blue-700 text-blue-100 font-bold px-4 py-1 rounded self-center">Nuevo Juego</button>
+                </div>
+            </form>
+            <section id="guessResult" class="mt-6 flex-col gap-2" style="display: none;">
+                <h2 id="gameHistory" class="text-xl">Historial del juego</h2>
+                <div class="flex flex-row gap-2">
+                    <span id="nearLowest" class="text-xl text-blue-500 bg-blue-100 p-2 rounded-md border-2 border-blue-500 self-center">0</span>
+                    <span id="lastResult" class="text-xl text-blue-600 bg-blue-200 p-2 rounded-md border-2 border-blue-600">Ingresa un número para comenzar!</span>
+                    <span id="nearHighest" class="text-xl text-blue-500 bg-blue-100 p-2 rounded-md border-2 border-blue-500 self-center">100</span>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-col">
+                        <h3 class="underline">Intentos anteriores:</h3>
+                        <ul id="guessHistory" class="list-none"></ul>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="underline">Estadísticas:</h3>
+                        <ul id="statistics" class="list-none">
+                            <li id="statTime"></li>
+                            <li id="statAttempts"></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="topThree" class="mt-6 flex-col gap-2" style="display: flex;">
+                <h2 id="topThreeTitleTime" class="text-xl">Top 3 por tiempo</h2>
+                <ul id="topThreeListTime" class="list-none"></ul>
+                <h2 id="topThreeTitleAttempts" class="text-xl">Top 3 por intentos</h2>
+                <ul id="topThreeListAttempts" class="list-none"></ul>
+            </section>
+
+        </main>
+        <div id="modal" class="hidden p-4 rounded-lg bg-slate-900/90 border-1 border-slate-900 w-72 h-48 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div id="modalContent" class="flex flex-col gap-3 justify-center items-center text-center">
+                <h2 class="text-2xl text-blue-300">Entraste al top 3!</h2>
+                <div>
+                    <label for="nick" class="text-blue-300">Ingresa tu nombre:</label>
+                    <input id="nick" type="text">
+                </div>
+                <div class="flex flex-row w-full justify-between px-4 mt-3">
+                    <button id="saveNick" class="bg-green-500 hover:bg-green-700 text-green-100 font-bold px-4 py-1 rounded">Guardar</button>
+                    <button id="closeModal" class="bg-red-500 hover:bg-red-700 text-red-100 font-bold px-4 py-1 rounded">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
