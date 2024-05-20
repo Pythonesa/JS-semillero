@@ -6,9 +6,12 @@
         "kaly",
         "Kaly",
         "localstorage",
+        "pomodoro",
+        "Pomodoro",
         "pomodoros",
         "renderizar",
         "saludito",
-        "tailwindcss"
+        "tailwindcss",
+        "uuidv"
     ]
 }

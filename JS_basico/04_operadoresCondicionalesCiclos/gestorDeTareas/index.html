@@ -7,11 +7,34 @@
     <link rel="icon" type="image/png" href="./images/favicon.png">
     <!-- Tailwind CDN: No se debe usar en producción -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./scripts/main.mjs" type="module"></script>
     <script src="./scripts/includeHTML.js" type="text/javascript"></script>
 </head>
-<body>
-    <header w3-include-html="./fragments/header.html"></header>
+<body class="w-full h-full bg-[#2C2144]">
+    <div id="main" class="flex flex-col m-auto">
+        <header w3-include-html="./fragments/header.html"
+            class="flex flex-row justify-center items-center text-center self-center mt-2 w-5/6 gap-3 p-2"
+        ></header>
+        <div id="content"
+            w3-include-html="./fragments/content.html"
+            class="flex flex-col justify-center items-center text-center self-center mt-2 w-5/6"
+        ></div>
+    </div>
+    <dialog id="modalAddTask" class="modal"
+        w3-include-html="./fragments/modalAddTask.html"
+    ></dialog>
+    <dialog id="modalEditTask" class="modal"
+        w3-include-html="./fragments/modalEditTask.html"
+    ></dialog>
+    <dialog id="modalPomodoros" class="modal"
+        w3-include-html="./fragments/modalPomodoros.html"
+    ></dialog>
     <script>includeHTML();</script>
+    <script src="./scripts/main.mjs" type="module"></script>
 </body>
 </html>
+<style>
+    .modal::backdrop {
+        background: linear-gradient(rgba(43, 5, 58, 0.7), rgba(113, 16, 97, 0.7));
+        backdrop-filter: blur(5px);
+    }
+</style>
