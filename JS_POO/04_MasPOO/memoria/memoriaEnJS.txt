@@ -1,0 +1,6 @@
+Variables -> referencias a un espacio de memoria
+Navegadores -> usan stack y heap
+Stack -> rápida pero sin demasiado espacio
+      -> se almacenan los primitivos y los punteros
+Heap -> lenta, desordenada pero con mucho espacio
+     -> se almacenan los objetos
