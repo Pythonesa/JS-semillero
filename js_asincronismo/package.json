@@ -1,0 +1,19 @@
+{
+  "name": "js_asincronismo",
+  "version": "1.0.0",
+  "description": "Emojis and asynchronous programming in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "Asynchronism",
+    "Emojis"
+  ],
+  "author": "María Méndez",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}

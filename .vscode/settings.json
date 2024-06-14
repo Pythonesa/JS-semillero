@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "Anios",
+        "asincronismo",
         "caracter",
         "donald",
         "enumerables",
@@ -17,6 +18,8 @@
         "renderizar",
         "saludito",
         "tailwindcss",
-        "uuidv"
+        "uuidv",
+        "xhttp",
+        "xmlhttprequest"
     ]
 }
